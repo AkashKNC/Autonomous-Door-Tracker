@@ -1,0 +1,17 @@
+# macOS system files
+.DS_Store
+
+# Python caches and virtual environments
+__pycache__/
+*.pyc
+venv/
+env/
+
+# AI datasets, model weights, and training runs
+*.pt
+*.onnx
+*.engine
+datasets/
+runs/
+door_env/
+door_dataset_*/
