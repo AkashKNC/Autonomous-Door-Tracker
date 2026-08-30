@@ -20,7 +20,7 @@ The current perception pipeline works as follows:
 
 The hardware is supported by a custom electrically isolated power-distribution architecture designed to safely power the flight controller, Jetson companion computer, and supporting electronics from the aircraft's LiPo power system.
 
-mermaid
+```mermaid
 flowchart LR
     A[Training Dataset] --> B[YOLOv8 Model Training]
     B --> C[Trained Model]
@@ -30,8 +30,10 @@ flowchart LR
     F --> G[Traversability Decision]
     G -. Future Integration .-> H[Navigation / Path Planning]
     H -. Future Integration .-> I[Pixhawk 6C Flight Control]
+```
 
-**Repository Structure**
+## Repository Structure
+
 * `/architecture`: System flowcharts and power routing diagrams.
 * `/hardware`: Mezzanine deck specifications and component lists.
 * `/macbook_training`: Local AI training scripts and validation code.
