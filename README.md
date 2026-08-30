@@ -73,6 +73,12 @@ The current prototype demonstrates that the complete perception path can operate
 
 Navigation decisions and autonomous flight responses have not yet been integrated and remain planned work.
 
+### Example Detections
+
+| Open Door | Closed Door | Partially Open Door |
+|---|---|---|
+| ![](results/open_door_detection.jpg) | ![](results/closed_door_detection.jpg) | ![](results/partial_door_detection.jpg) |
+
 ## Repository Structure
 
 * `/architecture`: System flowcharts and power routing diagrams.
