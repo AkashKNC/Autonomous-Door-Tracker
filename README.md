@@ -41,7 +41,7 @@ flowchart LR
 | Live camera inference with OpenCV | ✅ Implemented |
 | Open / closed / ajar door classification | ✅ Implemented |
 | Quadcopter hardware and power integration | 🔧 In Progress |
-| Perception-to-navigation interface | 🔧 In Progress |
+| Perception-to-navigation interface | 📋 Planned |
 | Autonomous path planning | 📋 Planned |
 | Closed-loop autonomous flight through traversable openings | 📋 Planned |
 
