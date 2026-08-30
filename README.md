@@ -77,7 +77,7 @@ Navigation decisions and autonomous flight responses have not yet been integrate
 
 | Open Door | Closed Door | Partially Open Door |
 |---|---|---|
-| ![](results/open_door_detection.jpg) | ![](results/closed_door_detection.jpg) | ![](results/partial_door_detection.jpg) |
+| ![](results/open_door.jpg) | ![](results/closed_door.jpg) | ![](results/partially_open_door.jpg) |
 
 ## Repository Structure
 
