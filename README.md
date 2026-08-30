@@ -6,16 +6,19 @@ This project explores how a quadcopter can use onboard edge AI to identify physi
 
 The system combines a custom power and hardware architecture with a computer-vision pipeline trained off-device and deployed to an NVIDIA Jetson Orin Nano for real-time camera inference. The current implementation detects and classifies doors as open, closed, or ajar, providing a perception layer that can later be integrated with flight-control and path-planning logic.
 
-**Hardware Architecture**
-* Holybro X500 Quadcopter Frame with a Pixhawk 6C Flight Controller
-* NVIDIA Jetson Orin Nano for edge inference
-* Custom-fabricated electrically isolated mezzanine deck
-* Distributed capacitance power grid with inline circuit protection
+## System Architecture
 
-**Software & AI Pipeline**
-* PyTorch & YOLOv8 for custom door-state model training
-* OpenCV for live camera feed processing
-* Iterative edge-deployment and validation directly on the Jetson hardware
+The platform separates flight control from onboard AI perception. A Pixhawk 6C manages the quadcopter's flight-control functions, while an NVIDIA Jetson Orin Nano serves as the companion computer for real-time visual perception.
+
+The current perception pipeline works as follows:
+
+1. **Model Training** — Door-state images are prepared and used to train a custom YOLOv8 model off-device.
+2. **Edge Deployment** — The trained model is transferred to the Jetson Orin Nano.
+3. **Live Perception** — A camera feed is processed with OpenCV and passed to the model for real-time inference.
+4. **Door-State Classification** — The system identifies doors and classifies their state as open, closed, or ajar.
+5. **Navigation Integration — Planned** — Perception results will ultimately be provided to navigation and flight-control logic so the aircraft can determine whether an opening is traversable and respond autonomously.
+
+The hardware is supported by a custom electrically isolated power-distribution architecture designed to safely power the flight controller, Jetson companion computer, and supporting electronics from the aircraft's LiPo power system.
 
 **Repository Structure**
 * `/architecture`: System flowcharts and power routing diagrams.
