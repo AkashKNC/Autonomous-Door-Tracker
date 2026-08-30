@@ -1,10 +1,10 @@
 # Autonomous Edge-AI Quadcopter
 
-**Onboard door-state perception using NVIDIA Jetson Orin Nano, YOLOv8, OpenCV, and a Pixhawk-based quadcopter platform.**
+**Onboard visual perception for autonomous navigation using NVIDIA Jetson Orin Nano, YOLOv8, OpenCV, and a Pixhawk-based quadcopter platform.**
 
-This project explores how a quadcopter can use onboard edge AI to understand its immediate environment by detecting and classifying physical door states as open, closed, or ajar.
+This project explores how a quadcopter can use onboard edge AI to identify physical door states and determine whether an opening is potentially traversable during autonomous navigation.
 
-The system combines a custom power and hardware architecture with a computer-vision pipeline trained off-device and deployed to an NVIDIA Jetson Orin Nano for real-time camera inference and iterative validation on the aircraft.
+The system combines a custom power and hardware architecture with a computer-vision pipeline trained off-device and deployed to an NVIDIA Jetson Orin Nano for real-time camera inference. The current implementation detects and classifies doors as open, closed, or ajar, providing a perception layer that can later be integrated with flight-control and path-planning logic.
 
 **Hardware Architecture**
 * Holybro X500 Quadcopter Frame with a Pixhawk 6C Flight Controller
