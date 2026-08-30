@@ -45,6 +45,34 @@ flowchart LR
 | Autonomous path planning | 📋 Planned |
 | Closed-loop autonomous flight through traversable openings | 📋 Planned |
 
+## Validation & Results
+
+The perception pipeline has been validated progressively from offline model testing to live edge deployment.
+
+### 1. Offline Image Validation
+The custom YOLOv8 model was evaluated against a separate set of test images to verify door detection and state classification before deployment. Inference testing used a 0.60 confidence threshold, 0.50 IoU threshold, and class-agnostic non-maximum suppression to reduce duplicate detections and false positives.
+
+### 2. Live Camera Validation
+The trained model was then connected to a live OpenCV camera feed to verify continuous frame-by-frame inference under real-world viewing conditions rather than static images alone.
+
+### 3. NVIDIA Jetson Edge Deployment
+The perception model was deployed to the NVIDIA Jetson Orin Nano as a TensorRT inference engine. The Jetson pipeline:
+
+- Captures video from a MIPI CSI camera at 1280×720 resolution
+- Performs GPU-accelerated inference directly on the edge device
+- Detects and classifies doors as **open**, **closed**, or **partially open**
+- Displays annotated detections from the live camera stream
+
+This validated the core perception pipeline required for the next phase of the project: connecting visual door-state information to navigation and flight-control logic.
+
+### Current Validation Scope
+
+The current prototype demonstrates that the complete perception path can operate from:
+
+**camera → Jetson → TensorRT inference → door detection → door-state classification**
+
+Navigation decisions and autonomous flight responses have not yet been integrated and remain planned work.
+
 ## Repository Structure
 
 * `/architecture`: System flowcharts and power routing diagrams.
