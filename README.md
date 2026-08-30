@@ -32,6 +32,19 @@ flowchart LR
     H -. Future Integration .-> I[Pixhawk 6C Flight Control]
 ```
 
+## Current Project Status
+
+| Capability | Status |
+|---|---|
+| Custom door-state model training | ✅ Implemented |
+| NVIDIA Jetson Orin Nano deployment | ✅ Implemented |
+| Live camera inference with OpenCV | ✅ Implemented |
+| Open / closed / ajar door classification | ✅ Implemented |
+| Quadcopter hardware and power integration | 🔧 In Progress |
+| Perception-to-navigation interface | 🔧 In Progress |
+| Autonomous path planning | 📋 Planned |
+| Closed-loop autonomous flight through traversable openings | 📋 Planned |
+
 ## Repository Structure
 
 * `/architecture`: System flowcharts and power routing diagrams.
