@@ -1,27 +1,18 @@
 from ultralytics import YOLO
-import cv2
 
-# 1. Load your CUSTOM trained model (make sure train3 matches your latest successful run!)
-model = YOLO('runs/detect/train3/weights/best.pt')
+# 1. Load your CUSTOM trained model
+model = YOLO('runs/detect/trainPrime/weights/best.pt')
 
-# 2. Add the filters here to fix the wall engravings and double-boxes
-# YOLO will automatically find and process all images inside
-results = model('test_images', conf=0.6, iou=0.5, agnostic_nms=True)
+# 2. Run inference and SAVE the results directly to your folder
+# By setting save=True, YOLO does all the work automatically without cv2
+results = model(
+    'test_images', 
+    conf=0.6, 
+    iou=0.5, 
+    agnostic_nms=True, 
+    save=True, 
+    project='tested_images_output', 
+    name='run_1'
+)
 
-# Loop through the results (one by one)
-for result in results:
-    # Extract the image with the bounding boxes
-    annotated_image = result.plot()
-
-    # Display the current image
-    cv2.imshow("Batch YOLO Test", annotated_image)
-
-    # Wait for you to press a key.
-    # Pressing 'q' will quit the whole program.
-    # Pressing literally any other key will move to the next photo!
-    key = cv2.waitKey(0) & 0xFF
-    if key == ord('q'):
-        break
-
-# Clean up and close the window when the loop finishes
-cv2.destroyAllWindows()
+print("Batch complete! Check the 'tested_images_output/run_1' folder for the images.")
