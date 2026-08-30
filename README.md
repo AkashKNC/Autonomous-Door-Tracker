@@ -1,6 +1,10 @@
 # Autonomous Edge-AI Quadcopter
 
-An autonomous drone platform engineered to detect and classify physical door states (open, closed, ajar) in real-time. This project integrates custom hardware power distribution with a closed-loop computer vision pipeline deployed directly on edge hardware.
+**Onboard door-state perception using NVIDIA Jetson Orin Nano, YOLOv8, OpenCV, and a Pixhawk-based quadcopter platform.**
+
+This project explores how a quadcopter can use onboard edge AI to understand its immediate environment by detecting and classifying physical door states as open, closed, or ajar.
+
+The system combines a custom power and hardware architecture with a computer-vision pipeline trained off-device and deployed to an NVIDIA Jetson Orin Nano for real-time camera inference and iterative validation on the aircraft.
 
 **Hardware Architecture**
 * Holybro X500 Quadcopter Frame with a Pixhawk 6C Flight Controller
